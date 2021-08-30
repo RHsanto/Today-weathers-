@@ -22,7 +22,7 @@ const  displayError = error => {
 
 
 const displayWeather = temp =>{
-  console.log(temp)
+ 
 
   const weatherDisplay = document.getElementById('display-weather');
   weatherDisplay.textContent='';
