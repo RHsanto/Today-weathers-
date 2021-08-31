@@ -21,21 +21,22 @@ const  displayError = error => {
 }
 
 
-const displayWeather = temp =>{
- 
+const displayWeather = data =>{
 
   const weatherDisplay = document.getElementById('display-weather');
   weatherDisplay.textContent='';
   const h2 = document.createElement('div')
     h2.innerHTML = `
-    <img src="http://openweathermap.org/img/w/${temp.weather[0].icon}.png" alt="">
+    <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="">
     
-     <h2>  ${temp.name}  </h2>
-     <h3>  ${temp.coord.lat.toFixed(0)}°C  </h3>
-     <h5> ${temp.weather[0].main} </h5>
+     <h2>  ${data.name} , ${data.sys.country}  </h2>
+   <h3>  ${((data.main.temp)-273.15).toFixed(0)}°C | ${(((data.main.temp)-273.15)*(9/5) + 32).toFixed(0)}°F  </h3>
+   <h3>     </h3>
+     <h5> ${data.weather[0].main} </h5>
      
     `
     weatherDisplay.appendChild(h2)
   
   
-  }
+  } 
+  
